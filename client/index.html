@@ -66,6 +66,13 @@
       #root {
         min-height: 100vh;
       }
+      
+      /* Ensure content is visible by default */
+      [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
     </style>
   </head>
   <body class="dark">
@@ -75,12 +82,24 @@
     <!-- Initialize AOS -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-          duration: 1000,
-          once: true,
-          offset: 100,
-          easing: 'ease-out'
-        });
+        // Ensure AOS is available before initializing
+        if (typeof AOS !== 'undefined') {
+          AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out',
+            disable: false // Always enable animations
+          });
+        } else {
+          console.warn('AOS library not loaded, animations will be disabled');
+          // Remove data-aos attributes so content is visible
+          document.querySelectorAll('[data-aos]').forEach(el => {
+            el.removeAttribute('data-aos');
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+        }
       });
     </script>
   </body>
