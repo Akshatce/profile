@@ -339,13 +339,13 @@ const Portfolio = () => {
         <section id="about" className="py-20 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="about-title">
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="about-title" data-aos="fade-up">
                 About Me
               </h2>
               
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* About Text */}
-                <div data-testid="about-description">
+                <div data-testid="about-description" data-aos="fade-up" data-aos-delay="100">
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                     Over 9+ years of experience in Software Development and Cloud Architecture, with proven expertise in building and maintaining large-scale, high-availability applications in the banking and consumer-facing domains.
                   </p>
@@ -358,7 +358,7 @@ const Portfolio = () => {
                 </div>
                 
                 {/* Quick Facts */}
-                <div data-testid="achievements">
+                <div data-testid="achievements" data-aos="fade-up" data-aos-delay="200">
                   <h3 className="font-heading font-semibold text-xl mb-6">Key Achievements</h3>
                   <div className="space-y-4">
                     <Card className="hover:shadow-lg transition-shadow" data-testid="achievement-users">
@@ -413,11 +413,11 @@ const Portfolio = () => {
         <section id="skills" className="py-20 bg-secondary/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="skills-title">
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="skills-title" data-aos="fade-up">
                 Technical Skills
               </h2>
               
-              <div className="flex flex-wrap gap-3 justify-center" data-testid="skills-container">
+              <div className="flex flex-wrap gap-3 justify-center" data-testid="skills-container" data-aos="fade-up" data-aos-delay="100">
                 {skills.map((skill) => (
                   <Badge 
                     key={skill.name}
@@ -437,7 +437,7 @@ const Portfolio = () => {
         <section id="experience" className="py-20 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="experience-title">
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="experience-title" data-aos="fade-up">
                 Professional Experience
               </h2>
               
@@ -446,7 +446,7 @@ const Portfolio = () => {
                 <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-600 to-purple-600"></div>
                 
                 {/* Experience Items */}
-                <div className="space-y-12">
+                <div className="space-y-12" data-aos="fade-up" data-aos-delay="100">
                   {experiences.map((exp) => {
                     const IconComponent = exp.icon;
                     return (
@@ -497,11 +497,11 @@ const Portfolio = () => {
         <section id="certifications" className="py-20 bg-secondary/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="certifications-title">
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="certifications-title" data-aos="fade-up">
                 Certifications
               </h2>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" data-testid="certifications-grid">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" data-testid="certifications-grid" data-aos="fade-up" data-aos-delay="100">
                 {certifications.map((cert) => {
                   const IconComponent = cert.icon;
                   return (
@@ -529,13 +529,13 @@ const Portfolio = () => {
         <section id="contact" className="py-20 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="contact-title">
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-center mb-16" data-testid="contact-title" data-aos="fade-up">
                 Get In Touch
               </h2>
               
               <div className="grid md:grid-cols-2 gap-12">
                 {/* Contact Form */}
-                <div data-testid="contact-form-section">
+                <div data-testid="contact-form-section" data-aos="fade-up" data-aos-delay="100">
                   <form onSubmit={handleContactSubmit} className="space-y-6" data-testid="contact-form">
                     <div>
                       <Label htmlFor="name">Name</Label>
@@ -584,7 +584,7 @@ const Portfolio = () => {
                 </div>
                 
                 {/* Contact Info */}
-                <div data-testid="contact-info-section">
+                <div data-testid="contact-info-section" data-aos="fade-up" data-aos-delay="200">
                   <div className="space-y-8">
                     <div>
                       <h3 className="font-heading font-semibold text-xl mb-4">Let's Connect</h3>

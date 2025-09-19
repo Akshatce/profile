@@ -1,6 +1,8 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import path from "path";
+import fs from "fs";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // put application routes here
@@ -8,6 +10,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // use storage to perform CRUD operations on the storage interface
   // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
+
+  // Serve service worker with correct MIME type
+  app.get("/sw.js", (req, res) => {
+    const swPath = path.resolve(import.meta.dirname, "..", "public", "sw.js");
+    if (fs.existsSync(swPath)) {
+      res.setHeader("Content-Type", "application/javascript");
+      res.sendFile(swPath);
+    } else {
+      res.status(404).send("Service worker not found");
+    }
+  });
 
   const httpServer = createServer(app);
 
