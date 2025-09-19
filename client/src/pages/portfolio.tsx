@@ -146,20 +146,33 @@ const Portfolio = () => {
     const handleScroll = () => {
       const sections = ['hero', 'about', 'skills', 'experience', 'certifications', 'contact'];
       const scrollY = window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      
+      // Find the section that's most visible in the viewport
+      let currentSection = 'hero';
+      let maxVisibleHeight = 0;
 
       sections.forEach(section => {
         const element = document.getElementById(section);
         if (element) {
-          const sectionTop = element.offsetTop - 200;
-          const sectionHeight = element.offsetHeight;
+          const rect = element.getBoundingClientRect();
+          const visibleTop = Math.max(0, -rect.top);
+          const visibleBottom = Math.min(rect.height, windowHeight - rect.top);
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
           
-          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            setActiveSection(section);
+          if (visibleHeight > maxVisibleHeight) {
+            maxVisibleHeight = visibleHeight;
+            currentSection = section;
           }
         }
       });
+      
+      setActiveSection(currentSection);
     };
 
+    // Initial call to set active section
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
