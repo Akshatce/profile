@@ -5,10 +5,6 @@ import { SmoothScroll } from '@/components/smooth-scroll';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import { 
   Sun, 
   Moon, 
@@ -36,7 +32,6 @@ import {
 
 const Portfolio = () => {
   const { theme, setTheme } = useTheme();
-  const { toast } = useToast();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
@@ -177,22 +172,6 @@ const Portfolio = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle form submission
-  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    
-    // TODO: Implement Replit form handler integration
-    console.log('Form submitted:', Object.fromEntries(formData));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-      duration: 3000,
-    });
-
-    e.currentTarget.reset();
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
@@ -533,58 +512,9 @@ const Portfolio = () => {
                 Get In Touch
               </h2>
               
-              <div className="grid md:grid-cols-2 gap-12">
-                {/* Contact Form */}
-                <div data-testid="contact-form-section" data-aos="fade-up" data-aos-delay="100">
-                  <form onSubmit={handleContactSubmit} className="space-y-6" data-testid="contact-form">
-                    <div>
-                      <Label htmlFor="name">Name</Label>
-                      <Input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="mt-2"
-                        data-testid="input-name"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="mt-2"
-                        data-testid="input-email"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        required
-                        className="mt-2 resize-none"
-                        data-testid="textarea-message"
-                      />
-                    </div>
-                    
-                    <Button
-                      type="submit"
-                      className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold transform hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
-                      data-testid="button-submit"
-                    >
-                      Send Message
-                    </Button>
-                  </form>
-                </div>
-                
+              <div className="max-w-2xl mx-auto">
                 {/* Contact Info */}
-                <div data-testid="contact-info-section" data-aos="fade-up" data-aos-delay="200">
+                <div data-testid="contact-info-section" data-aos="fade-up" data-aos-delay="100">
                   <div className="space-y-8">
                     <div>
                       <h3 className="font-heading font-semibold text-xl mb-4">Let's Connect</h3>
