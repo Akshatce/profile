@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from '@/components/theme-provider';
 import { TypingAnimation } from '@/components/typing-animation';
 import { SmoothScroll } from '@/components/smooth-scroll';
+import profileImage from '@/assets/profile.jpg';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -265,7 +266,7 @@ const Portfolio = () => {
                   <div className="mb-8">
                     {/* TODO: Replace with actual profile image */}
                     <img 
-                      src="/profile.jpg" 
+                      src={profileImage} 
                       alt="Akshat Desai profile photo" 
                       className="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto object-cover border-4 border-purple-200 shadow-lg"
                       onError={(e) => {
