@@ -1,0 +1,40 @@
+Create a single-page, mobile-first personal portfolio website for Akshat Desai using only HTML5, Tailwind CSS 3.4 CDN, and vanilla ES6.  
+Host the site on Replit and satisfy every requirement below.
+
+THEME & LAYOUT  
+- Dark default with a manual light/dark toggle switch in the top-right corner.  
+- Full-screen hero section: gradient background from indigo-900 to purple-700; center-white card with rounded-2xl shadow-2xl; contain a circular profile image (use placeholder https://i.pravatar.cc/300), name “Akshat Desai” in text-5xl font-extrabold, and an animated typed-loop subtitle that cycles through: “Cloud-Native Architect | 9+ Years in FinTech | Azure Expert | 10-Million-User Platforms”.  
+- Smooth-scroll navigation bar (sticky top) with links: About, Skills, Experience, Certifications, Contact. Highlight active section on scroll.
+
+SECTIONS  
+1. About – two-column responsive grid: left paragraph summarizing 9+ years of building large-scale secure banking solutions on Azure, right column with quick-fact badges (10 M users onboarded, 30 % manual reduction, 95 % SLA).  
+2. Skills – pill-style chips for: Java, Spring Boot, Microservices, Azure (Event Hub, Functions, App Services, Front Door), Kafka, Redis, MySQL, MongoDB, Docker, CI/CD, Python (beginner).  
+3. Experience – vertical timeline:  
+   a. Jul 2023 – Present, Lead Engineer @ Mobiquity (Hexaware) – banking platform, onboarded 10 M users, remote-config feature ↓ 30 % manual work.  
+   b. Mar 2021 – Jun 2023, Senior Full-Stack Dev @ Cignex – migrated Liferay → Spring Boot, saved $1 per user licence, 95 % SLA ticket resolution.  
+   c. Dec 2020 – Mar 2021, Software Engineer @ BlackStraw AI.  
+   d. Jan 2017 – Dec 2020, Software Engineer @ eInfochips – IoT ultrasound, 500 msgs/sec Kafka pipeline.  
+   e. Jul 2016 – Jan 2017, Engineer @ Samcom – employee tracking Android app.  
+   Display company logos as 40×40 placeholder icons, year range left border accent color.  
+4. Certifications – 5 clickable badge images (Azure Developer, Azure Architect, AWS Developer, GCP Associate) linking to credential verification pages (use # for href).  
+5. Contact – Replit-native form with fields: Name, Email, Message; submit button labelled “Send Message”; on submit show “Thank you” toast; form action should use Replit’s built-in form handler URL. Below the form, horizontal row of social icons (LinkedIn, Gmail, GitHub) using Feather-icons CDN; links: LinkedIn=https://linkedin.com/in/akshatdesaice, Gmail=mailto:akshatdesai.ce@gmail.com, GitHub=#.
+
+GLOBAL FEATURES  
+- Use AOS (Animate On Scroll) library for fade-up on every section.  
+- Google-fonts: Inter for body, Poppins for headings.  
+- SEO: proper <title>, meta description, Open-Graph tags, JSON-LD structured data for Person.  
+- Accessibility: semantic nav, main, section, aria-labels, button contrast.  
+- 100/100 Lighthouse score target: inline critical CSS, lazy-load AOS, async font.  
+- No external JS frameworks; keep total network payload < 150 kB.  
+- After first load, cache assets with service-worker for offline view.
+
+FILES TO GENERATE  
+- index.html  
+- style.css (only custom overrides)  
+- main.js (typed effect, theme toggle, smooth-scroll, AOS init)  
+- sw.js (service worker cache)  
+- README.md with “Deploy on Replit” button and instructions to swap placeholder profile.jpg and AkshatDesai_Resume.pdf.
+
+Replace every placeholder image or PDF with clear comments: “<!-- TODO: swap with real file -->”.  
+Provide concise code, fully responsive, no errors in W3C validator.  
+Add a download button in the hero labeled “Download CV” linking to AkshatDesai_Resume.pdf (placeholder for now).
